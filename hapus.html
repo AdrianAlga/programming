@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const data = {
+        nama: "angga",
+        kelas: "A",
+        nim: 25,
+        2468: {
+          albumTitle: "1999",
+          artist: "Prince",
+          tracks: ["1999", "Little Red Corvette"],
+        },
+      };
+
+      delete data.nim;
+      data.nama = "Adrian";
+      data.alamat = "sapaya";
+
+      console.info(data[2468]);
+      console.info(data.nama);
+    </script>
+  </body>
+</html>

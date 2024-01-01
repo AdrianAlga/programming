@@ -1,0 +1,74 @@
+<---- DOM (Document Object Model) ---->
+Dom adalah representasi elemen HTML pada dokumen menjadi sebuah object.
+
+DOM Tree (Pohon DOM) => yang dimana seluruh elemennya kita sebut node/simpul
+node pada DOM tree memiliki beberapa tipe  seperti (Document,elemen,text)
+
+
+<-- NodeList vs HTMLCollection -->
+Setiap elemen kita sebut Node, jika kita memilih lebih dari satu node disebut nodeList sedangkan
+HTMLcollection yaitu kumpulan node yang tipe nodenya elemen HTML saja.
+HTMLcollection bersifat live sedangkan nodeList tidak
+
+
+<-- Struktur Hierarki pada DOM Tree -->
+1. Root Node
+    - node yang menjadi sumber dari semua node lain di dalam DOM
+    - document
+
+2. Parent Node
+    - node yang berada satu tingkat diatas node yang lain
+
+3. Child Node
+    - node yang berada satu tingkat dibawah node yang lain
+
+
+<-- DOM Selection Method -->                                                        Hasil
+    - getElementById()          => mengambil DOM berdasarkan id                 => element
+    - getElementsByTagName()    => mengambil tag HTML                           => HTMLCollection
+    - getElementsByClassName()  => mengambil elemen dengan class tertentu       => HTMLCollection
+    - querySelector()           => Mengambil elemen berdasarkan selectornya     => element
+    - querySelectorAll()        => Mengambil elemen berdasarkan selectornya     => nodeList
+
+    -> mengubah node root : seperti memperkecil scopenya
+        const paraf = document.getElementById("b");  => mengambil id dalam lingkup section tertentu
+        const p4 = paraf.getElementsByTagName("p");  => node root nya yaitu section yang sudah kita ambil diatas
+
+
+<-- DOM Manipulation -->
+    - Manipulasi Element
+        + element.innerHtml                                => mengubah isi dari sebuah tag yang sudah kita seleksi (isinya bisa berupa tag HTML)
+        + element.style.<property>                         => menambah style
+        + element.setAttribute("attribute", "isiAttribute) => menambah attribute baru dan jika attrbutenya sudah ada maka akan menimpa isi attibutenya
+        + element.removeAttribute("atttibute")             => menghapus attribute
+
+        + element.classList                                => manipulasi class
+            .add()                  => menambah class baru tanpa menimpa class yang sudah ada
+            .remove()               => menghapus class yang ada
+            .toggle()               => jika sebuah element tidak memiliki class maka akan menambahkan dan jika sudah ada maka akan menghilangkan class tersbut
+            .replace()              => mengganti class yang sudah ada ke yang baru
+            .item("nomorUrutClass") => untuk mengetahui class tertentu yang ada pada element dengan menentukan nomor urut classnya 
+            .contains("namaClass")  => mengecek pada sebuah element apakah mempunyai class tertentu dengan menentukan nama classnya
+
+
+
+    - Manipulasi Node
+        + document.createElement()                      => membuat element/node seperti tag HTML
+        + document.createTextNode()                     => membuat tulisan yang akan dimasukkan ke element yang sudah kita buat
+        + parentNode.appenChild()                       => menggabungkan node atau menyimpan ke akhir ke element parent contoh : parent.appenChild(nodeBaru)
+        + parentNode.insertBefore(baru, sebelumNode)    => menyisipkan node, contoh : parent.insertBefore(nodeBaru, ditempatkan sebelum node)
+        + parentNode.removeChild()                      => menghapus node
+        + parentNode.replaceChild(baru, nodeReplace)    => mengubah node
+
+
+<-- DOM Events -->
+Events pada javascript adalah merepresentasikan sebuah kejadian yang terjadi di dalam DOM, kejadian tersebut bisa dilakukan oleh user atau otomatis dilakukan oleh API
+Cara 'mendengarkan' Event
+    -Event Handler
+        + inline HTML Attribute     => menyimpan attribute event di dalam element HTML
+            -> <p onclick="function()" ></p>
+        + element method            => attribute eventnya di tulis pada javascript, dan jika lebih dari satu event maka akan menimpa event sebelumnya 
+            -> element.onclick = function();
+
+    - addEventListener()            => berbeda dengan elemen method pada event handler, fungsi ini tidak akan menimpa jika lebih dari satu fungsi event
+        + element.addEventListener("click", function())

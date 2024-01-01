@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kalkulator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section>
+      <div class="container">
+        <h1>Kalkulator</h1>
+        <div class="card-kalkulator">
+          <div class="hasil">
+            <h4>Output</h4>
+          </div>
+          <div class="input">
+            <button onclick="angkaHandler(this)" class="angka" value="1">1</button>
+            <button onclick="angkaHandler(this)" class="angka" value="2">2</button>
+            <button onclick="angkaHandler(this)" class="angka" value="3">3</button>
+            <button onclick="angkaHandler(this)" class="angka" value="4">4</button>
+            <button onclick="angkaHandler(this)" class="angka" value="5">5</button>
+            <button onclick="angkaHandler(this)" class="angka" value="6">6</button>
+            <button onclick="angkaHandler(this)" class="angka" value="7">7</button>
+            <button onclick="angkaHandler(this)" class="angka" value="8">8</button>
+            <button onclick="angkaHandler(this)" class="angka" value="9">9</button>
+            <button onclick="angkaHandler(this)" class="angka" value="0">0</button>
+            <button onclick="operatorHandler(this)" class="operator" value="+">+</button>
+            <button onclick="operatorHandler(this)" class="operator" value="-">-</button>
+            <button onclick="operatorHandler(this)" class="operator" value="*">*</button>
+            <button onclick="operatorHandler(this)" class="operator" value="/">/</button>
+            <button onclick="calculate()" id="resultBtn" value="=">=</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="kalkulator.js"></script>
+  </body>
+</html>

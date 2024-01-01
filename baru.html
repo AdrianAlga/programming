@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <!-- CSS -->
+    <style>
+      .card {
+        padding: 10px;
+        border: 1px solid #000000;
+        border-radius: 10px;
+        width: 200px;
+      }
+      .card .hasil {
+        background-color: #000000b6;
+        color: white;
+        height: 70px;
+        display: flex;
+        justify-content: end;
+        padding-right: 10px;
+        align-items: center;
+        margin-bottom: 10px;
+        border-radius: 2px;
+      }
+
+      .card .inputan {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 8px;
+      }
+
+      button {
+        height: 40px;
+        width: 45px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      .clear button {
+        height: 40px;
+        width: 96px;
+        background-color: red;
+        border: 1px solid;
+        border-radius: 3px;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <div class="card">
+        <div class="hasil">
+          <h4>Output</h4>
+        </div>
+        <div class="inputan">
+          <div class="clear">
+            <button>Clear</button>
+          </div>
+          <button>/</button>
+          <button>*</button>
+        </div>
+        <div class="inputan">
+          <button>7</button>
+          <button>8</button>
+          <button>9</button>
+          <button>/</button>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

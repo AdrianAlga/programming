@@ -1,0 +1,86 @@
+<-- FUNCTION -->
+Sebuah sub-program yang dapat dipanggil di bagian lain pada program, disebut sebagai prosedur (kumpulan statement untuk melakukan tugas atau menghitung sebuah nilai)
+Untuk menggunakannya kita harus membuatnya terlebih dahulu lalu memanggilnya.
+
+Ada dua kategori function yaitu 
+    - Built-in function         = Fungsi yang sudah dibuatkan oleh javascript
+    - User-Defined Function     = Fungsi yang kita buat sendiri
+
+Cara membuat function ada dua
+    - function dengan deklarasi (declaration)
+        -> membuat sebuah fungsi yang diberi nama dan parameter
+    - function dengan ekspresi (Expression)
+        -> menyimpan function kedalam sebuah variabel dan fungsi tersebut tidak memiliki nama
+            var jumlahDuaBilangan = function(parameter){
+                
+            }
+    
+        > parameter
+            variabel yang di tulis di dalam kurung pada saat function dibuat, digunakan untuk menampung nilai yang dikirimkan saat function dipanggil
+                -> Jika parameter lebih sedikit dari argument, maka argument kelebihannya akan di abaikan
+                -> Jika parameter lebih banyak dari argument, maka parameter kelebihannya akan diisi dengan nilai undefined
+        > argument
+            nilai yang dikirimkan ke parameter saat fungsi di panggil, argument juga bisa dalam bentuk function
+        
+        > arguments
+            array yang berisi nilai yang dikirimkan saat fungsi dipanggil
+
+Global Scope / Local Scope
+    contoh :
+
+    global scope
+    var a = 10;
+    function tes() {
+        local scope
+        var b = 5;
+        var total = a + b;
+        console.info(total);
+    }
+    tes();
+
+    penjelasan : 
+        -> global scope bisa di akses pada local scope
+        -> local scope tidak bisa diakses pada global scope
+
+    // global scope
+    var a = 1;
+    function tes() {
+        local scope
+        a = 5;
+    }
+    tes();
+
+    console.info(a);
+
+    hasilnya untuk console.info(a) adalah 5
+
+    penjelasan : 
+        -> pada function tes meiliki a = 5, yang dimana a tersebut buka variabel dalam function tersebut.
+           Maka akan keluar mengecek ke global apakah a tersebut adalah variable, dan jika masih tidak ada maka akan secara default javascript akan membuatnya secara default sebagi variable
+           berarti jika a tersebut tidak di defenisikan sebagai variabel di dalam fungsi maka default akan menjadi variable global
+
+
+Rekursif
+Sebuah fungsi yang memanggil dirinya sendiri (fungsi dalam fungsi)
+    - Base Case => kondisi akhir dari rekursif yang menghasilkan nilai
+                    yaitu dengan menggunakan pengkondisian if
+
+                    contoh :
+                        function rekursif(el) {
+                            if (el === 0) {
+                                return;
+                            }
+                            console.info(el);
+                            rekursif(el - 1);
+                            }
+
+                        rekursif(10);
+
+                    contoh Faktorial 5! = 5 x 4 x 3 x 2 x 1
+
+                        function rekursif(el) {
+                            if (el === 0) return 1;
+                            return el * rekursif(el - 1);
+                        }
+                        console.info(rekursif(5));
+    
